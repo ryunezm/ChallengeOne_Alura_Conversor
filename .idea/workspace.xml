@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/constants/ListMeasures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/constants/PrefixesIS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/Measure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureCurrency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureLength.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureMass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureTemperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" afterDir="false" />
+    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="Creating classes.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/constants/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/Measure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/Measure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureCurrency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureLength.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureMass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureMass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/MeasureTemperature.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +72,18 @@
       <option name="presentableId" value="Default" />
       <updated>1677027248836</updated>
     </task>
+    <task id="LOCAL-00001" summary="Creating classes.">
+      <created>1678386306591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678386306591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating classes." />
   </component>
 </project>

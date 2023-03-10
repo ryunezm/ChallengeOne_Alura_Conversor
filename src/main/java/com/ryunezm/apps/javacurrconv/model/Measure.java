@@ -29,5 +29,5 @@ public abstract class Measure{
         return factor;
     }
 
-    public abstract double Convert(double quantity, Measure target);
+    public abstract double Convert(double quantity, Measure unitTarget);
 }

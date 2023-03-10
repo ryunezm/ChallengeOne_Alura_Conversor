@@ -9,11 +9,11 @@ public class MeasureMass extends Measure{
 
     /**
      * @param quantity
-     * @param target
+     * @param unitTarget
      * @return
      */
     @Override
-    public double Convert(double quantity, Measure target) {
+    public double Convert(double quantity, Measure unitTarget) {
         return 0;
     }
 }

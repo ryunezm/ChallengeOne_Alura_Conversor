@@ -1,7 +1,7 @@
 package com.ryunezm.apps.javacurrconv.model;
 
-public class MeasureTemperature extends Measure{
-    public MeasureTemperature(String type, String name, String symbol, double factor) {
+public class MeasureTime extends Measure{
+    public MeasureTime(String type, String name, String symbol, double factor) {
         super(type, name, symbol, factor);
     }
 
