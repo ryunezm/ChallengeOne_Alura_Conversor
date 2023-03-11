@@ -1,8 +1,9 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public class MeasureTemperature extends Measure{
-    public MeasureTemperature(String type, String name, String symbol, double factor) {
-        super(type, name, symbol, factor);
+
+    public MeasureTemperature(String name, String symbol) {
+        super(name, symbol);
     }
 
     /**

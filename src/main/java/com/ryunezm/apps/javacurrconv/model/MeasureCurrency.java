@@ -1,8 +1,12 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public class MeasureCurrency extends Measure{
-    public MeasureCurrency(String type, String name, String symbol, double factor) {
-        super(type, name, symbol, factor);
+    public String code;
+    public double factor;
+    public MeasureCurrency(String code, String name, String symbol, double factor) {
+        super(name, symbol);
+        this.code = code;
+        this.factor = factor;
     }
 
     /**

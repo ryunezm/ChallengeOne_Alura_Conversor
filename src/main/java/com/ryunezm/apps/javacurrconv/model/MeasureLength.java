@@ -1,8 +1,13 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public class MeasureLength extends Measure{
-    public MeasureLength(String type, String name, String symbol, double factor) {
-        super(type, name, symbol, factor);
+    private double factor;
+    private boolean commonness;
+
+    public MeasureLength(String name, String symbol, double factor, boolean commonness) {
+        super(name, symbol);
+        this.factor = factor;
+        this.commonness = commonness;
     }
 
     /**

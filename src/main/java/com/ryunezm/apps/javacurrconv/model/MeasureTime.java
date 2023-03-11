@@ -1,8 +1,13 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public class MeasureTime extends Measure{
-    public MeasureTime(String type, String name, String symbol, double factor) {
-        super(type, name, symbol, factor);
+    private double factor;
+    private boolean commonness;
+
+    public MeasureTime(String name, String symbol, double factor, boolean commonness) {
+        super(name, symbol);
+        this.factor = factor;
+        this.commonness = commonness;
     }
 
     /**
