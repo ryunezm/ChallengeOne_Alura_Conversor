@@ -1,5 +1,7 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
+import com.ryunezm.apps.javacurrconv.model.UnitLength;
+
 public enum Length {
 
     meter("Meters", "m", 1, true),
@@ -39,5 +41,25 @@ public enum Length {
         this.symbol = symbol;
         this.factor = factor;
         this.commonness = commonness;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public double getFactor() {
+        return factor;
+    }
+
+    public boolean isCommonness() {
+        return commonness;
+    }
+
+    public UnitLength getUnit(){
+        return new UnitLength(name, symbol, factor, commonness);
     }
 }

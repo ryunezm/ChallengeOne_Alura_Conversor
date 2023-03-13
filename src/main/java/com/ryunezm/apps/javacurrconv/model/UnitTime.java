@@ -1,10 +1,10 @@
 package com.ryunezm.apps.javacurrconv.model;
 
-public class MeasureTime extends Measure{
+public class UnitTime extends Unit {
     private double factor;
     private boolean commonness;
 
-    public MeasureTime(String name, String symbol, double factor, boolean commonness) {
+    public UnitTime(String name, String symbol, double factor, boolean commonness) {
         super(name, symbol);
         this.factor = factor;
         this.commonness = commonness;
@@ -16,7 +16,7 @@ public class MeasureTime extends Measure{
      * @return
      */
     @Override
-    public double Convert(double quantity, Measure unitTarget) {
+    public double Convert(double quantity, Unit unitTarget) {
         return 0;
     }
 }

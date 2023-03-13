@@ -1,6 +1,6 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
-import com.ryunezm.apps.javacurrconv.model.MeasureCurrency;
+import com.ryunezm.apps.javacurrconv.model.UnitCurrency;
 
 public enum Currency {
     USD("USD", "U.S. dollar", "US$",1 ),
@@ -70,7 +70,7 @@ public enum Currency {
         return factor;
     }
 
-    public MeasureCurrency getUnit(){
-        return new MeasureCurrency(code, name, symbol, factor);
+    public UnitCurrency getUnit(){
+        return new UnitCurrency(code, name, symbol, factor);
     }
 }

@@ -1,5 +1,7 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
+import com.ryunezm.apps.javacurrconv.model.UnitMass;
+
 public enum Mass {
 
     gram("Grams", "g", 1, true),
@@ -27,17 +29,17 @@ public enum Mass {
     yoctograms("Yoctograms", "yg", 1e-24, false),
     rontograms("Rontograms", "rg", 1e-27, false),
     quectograms("Quectograms", "qg", 1e-30, false),
-    grains("Grains", "gr", 7000/453.59237, true),
-    dracmas("Dracmas", "dracmas", 256/453.59237, false),
-    ounces("Ounces", "oz", 16/453.59237, true),
-    pounds("Pounds", "lb", 1/453.59237, true),
-    arrobas("Arrobas", "@", 0.04/453.59237, true),
-    quintalUS("Short hundredweight (US)", "quintal(US)", 0.01/453.59237, true),
-    quintalUK("Long hundredweight (UK)", "quintal(UK)", (1/112)/453.59237, false),
-    quarterUS("Short quarter (US)", "qtr[US]", 0.002/453.59237, true),
-    quarterUK("Long quarter (UK)", "qtr[UK]", (1/560)/453.59237, false),
-    tonUS("Short ton", "",0.0005/453.59237, true),
-    tonUK("Long ton", "",(1/2240)/453.59237, false);
+    grains("Grains", "gr", 453.59237/7000, true),
+    dracmas("Dracmas", "dracmas", 453.59237/256, false),
+    ounces("Ounces", "oz", 453.59237/16, true),
+    pounds("Pounds", "lb", 453.59237, true),
+    arrobas("Arrobas", "@", 453.59237*25, true),
+    quintalUS("Short hundredweight (US)", "quintal(US)", 453.59237*1e2, true),
+    quintalUK("Long hundredweight (UK)", "quintal(UK)", 453.59237*112, false),
+    quarterUS("Short quarter (US)", "qtr[US]", 453.59237*5e2, true),
+    quarterUK("Long quarter (UK)", "qtr[UK]", 453.59237*560, false),
+    tonUS("Short ton", "",453.59237*2000, true),
+    tonUK("Long ton", "",453.59237*2240, false);
 
 
     private String name;
@@ -50,5 +52,25 @@ public enum Mass {
         this.symbol = symbol;
         this.factor = factor;
         this.commonness = commonness;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public double getFactor() {
+        return factor;
+    }
+
+    public boolean isCommonness() {
+        return commonness;
+    }
+
+    public UnitMass getUnit() {
+        return new UnitMass(name, symbol, factor, commonness);
     }
 }

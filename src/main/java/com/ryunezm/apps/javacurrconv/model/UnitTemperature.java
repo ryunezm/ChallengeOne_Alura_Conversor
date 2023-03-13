@@ -1,8 +1,8 @@
 package com.ryunezm.apps.javacurrconv.model;
 
-public class MeasureTemperature extends Measure{
+public class UnitTemperature extends Unit {
 
-    public MeasureTemperature(String name, String symbol) {
+    public UnitTemperature(String name, String symbol) {
         super(name, symbol);
     }
 
@@ -12,7 +12,7 @@ public class MeasureTemperature extends Measure{
      * @return
      */
     @Override
-    public double Convert(double quantity, Measure unitTarget) {
+    public double Convert(double quantity, Unit unitTarget) {
         return 0;
     }
 }

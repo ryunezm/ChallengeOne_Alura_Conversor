@@ -26,11 +26,11 @@ public enum Time {
     yoctoseconds("Yoctoseconds", "ys", 1e-24, false),
     rontoseconds("Rontoseconds", "rs", 1e-27, false),
     quectoseconds("Quectoseconds", "qs", 1e-30, false),
-    minutes("Minutes", "min", 1/60, true),
-    hour("Hours", "h", 1/3600, true),
-    days("Days", "day", 1/86400, true),
-    weeks("Weeks", "week", 1/604800, true),
-    years("Years", "year", 1/31557600, true);
+    minutes("Minutes", "min", 60, true),
+    hour("Hours", "h", 3600, true),
+    days("Days", "day", 86400, true),
+    weeks("Weeks", "week", 604800, true),
+    years("Years", "year", 31557600, true);
 
     private String name;
     private String symbol;

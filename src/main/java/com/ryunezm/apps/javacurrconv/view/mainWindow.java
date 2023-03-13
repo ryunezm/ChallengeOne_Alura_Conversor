@@ -1,7 +1,6 @@
 package com.ryunezm.apps.javacurrconv.view;
 
 import javax.swing.*;
-import com.ryunezm.apps.javacurrconv.constants.ListMeasures;
 
 public class mainWindow {
 

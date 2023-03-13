@@ -1,10 +1,10 @@
 package com.ryunezm.apps.javacurrconv.model;
 
-public abstract class Measure{
+public abstract class Unit {
     private String name;
     private String symbol;
 
-    public Measure(String name, String symbol) {
+    public Unit(String name, String symbol) {
         this.name = name;
         this.symbol = symbol;
     }
@@ -18,5 +18,5 @@ public abstract class Measure{
     }
 
 
-    public abstract double Convert(double quantity, Measure unitTarget);
+    public abstract double Convert(double quantity, Unit unitTarget);
 }
