@@ -6,6 +6,7 @@ public class UnitTemperature extends Unit {
         super(name, symbol);
     }
 
+
     /**
      * @param quantity
      * @param unitTarget

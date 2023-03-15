@@ -28,7 +28,23 @@ public enum Length {
     zeptometers("Zeptometers", "zm", 1e-21, false),
     yoctometers("Yoctometers", "ym", 1e-24, false),
     rontometers("Rontometers", "rm", 1e-27, false),
-    quectometers("Quectometers", "qm", 1e-30, false);
+    quectometers("Quectometers", "qm", 1e-30, false),
+    leagues("Leagues", "leagues", 4828.032, true),
+    miles("Miles", "mi.", 1609.344, true),
+    furlong("Furlong", "furlong", 201.168, false),
+    chain("Chains", "chains", 20.1168, false),
+    rod("Rods", "rods", 5.0292, false),
+    yards("Yards", "yd", 0.9144, true),
+    feet("Feet", "ft", 0.3048, true),
+    inches("Inches", "in", 0.0254, true),
+    mils("Mils", "thou in", 0.0000254, false),
+    nautical_leagues("Nautical leagues", "nau. leagues", 5558, true),
+    nautical_miles("Nautical miles", "nau. mi.", 1852, true),
+    cable_length("Cable lengths", "cable lengths", 185.2, false),
+    fathom("Fathom", "ftm", 1.8288, false),
+    astronomical_unit("Astronomical units", "AU", 1495978707e2, false),
+    light_year("Light years", "ly", 94607304725808e2, false),
+    parsec("Parsec", "pc", 3.0856775814913673e16, false);
 
 
     private String name;

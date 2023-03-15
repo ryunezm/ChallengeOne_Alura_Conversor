@@ -1,7 +1,6 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public class UnitMass extends Unit {
-    private String system;
     private double factor;
     private boolean commonness;
 
@@ -10,6 +9,14 @@ public class UnitMass extends Unit {
         this.factor = factor;
         this.commonness = commonness;
 
+    }
+
+    public double getFactor() {
+        return factor;
+    }
+
+    public boolean isCommonness() {
+        return commonness;
     }
 
     /**

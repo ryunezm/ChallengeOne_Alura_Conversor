@@ -1,7 +1,7 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
 public enum Time {
-    second("Second", "s", 1, true),
+    seconds("Seconds", "s", 1, true),
     quettaseconds("Quettaseconds", "Qs", 1e30, false),
     ronnaseconds("Ronnaseconds", "Rs", 1e27, false),
     yottaseconds("Yottaseconds", "Ys", 1e24, false),
@@ -42,5 +42,21 @@ public enum Time {
         this.symbol = symbol;
         this.factor = factor;
         this.commonness = commonness;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public double getFactor() {
+        return factor;
+    }
+
+    public boolean isCommonness() {
+        return commonness;
     }
 }

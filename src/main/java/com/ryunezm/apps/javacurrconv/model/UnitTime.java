@@ -10,6 +10,14 @@ public class UnitTime extends Unit {
         this.commonness = commonness;
     }
 
+    public double getFactor() {
+        return factor;
+    }
+
+    public boolean isCommonness() {
+        return commonness;
+    }
+
     /**
      * @param quantity
      * @param unitTarget
