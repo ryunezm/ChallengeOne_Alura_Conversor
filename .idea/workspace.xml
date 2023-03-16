@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230313_1000&#10;- Refactoring.&#10;- Fixing enum classes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Measure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/test.java" afterDir="false" />
+    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230315_1400: Reworking view logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitMass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitMass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTemperature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Measure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Measure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/MainWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/MainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "319",
-    "last_opened_file_path": "C:/Users/ryunezm/Documents/JARLbis/flatlaf-3.0.jar",
+    "last_opened_file_path": "C:/Users/ryunezm/IdeaProjects/Java Currency Converter/src/main/java/com/ryunezm/apps/javacurrconv/test",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -66,6 +62,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ryunezm\IdeaProjects\Java Currency Converter\src\main\java\com\ryunezm\apps\javacurrconv\test" />
+      <recent name="C:\Users\ryunezm\IdeaProjects\Java Currency Converter\src\main\java\com\ryunezm\apps\javacurrconv\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ryunezm\IdeaProjects\Java Currency Converter\src\main\java\com\ryunezm\apps\javacurrconv\View" />
     </key>
@@ -107,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678719782693</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="20230315_1400: Fixing classes.">
+      <created>1678907944469</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678907944469</updated>
+    </task>
+    <task id="LOCAL-00006" summary="20230315_1400: Finishing view.">
+      <created>1678908131019</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678908131019</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +140,14 @@
     <MESSAGE value="20230309_1900&#10;- Adding enum class (currency).&#10;- Fixing Measures classes." />
     <MESSAGE value="20230310_2000&#10;- Almost done enum classes.&#10;- Fixing Measures classes." />
     <MESSAGE value="20230313_1000&#10;- Refactoring.&#10;- Fixing enum classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="20230313_1000&#10;- Refactoring.&#10;- Fixing enum classes." />
+    <MESSAGE value="20230315_1400: Fixing classes." />
+    <MESSAGE value="20230315_1400: Finishing view." />
+    <MESSAGE value="20230315_1400: Reworking view logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="20230315_1400: Reworking view logic." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Java_Currency_Converter$mainWindow.ic" NAME="mainWindow Coverage Results" MODIFIED="1678908334625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ryunezm.apps.javacurrconv.view.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -38,14 +38,14 @@ public enum Mass {
     quintalUK("Long hundredweight (UK)", "quintal(UK)", 453.59237*112, false),
     quarterUS("Short quarter (US)", "qtr[US]", 453.59237*5e2, true),
     quarterUK("Long quarter (UK)", "qtr[UK]", 453.59237*560, false),
-    tonUS("Short ton", "",453.59237*2000, true),
-    tonUK("Long ton", "",453.59237*2240, false);
+    tonUS("Short ton", "ST",453.59237*2000, true),
+    tonUK("Long ton", "LT",453.59237*2240, false);
 
 
-    private String name;
-    private String symbol;
-    private double factor;
-    private boolean commonness;
+    private final String name;
+    private final String symbol;
+    private final double factor;
+    private final boolean commonness;
 
     Mass(String name, String symbol, double factor, boolean commonness) {
         this.name = name;

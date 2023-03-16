@@ -1,15 +1,26 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
 public enum Measure {
-    Select_a_measure, Currency, Length, Mass, Temperature, Time;
+    SELECT_A_MEASURE("Select a measure", false),
+    CURRENCY("Currency", false),
+    LENGTH("Length", true),
+    MASS("Mass", true),
+    TEMPERATURE("Temperature", false),
+    TIME("Time", true);
 
-    @Override
-    public String toString() {
-        switch (this){
-            case Select_a_measure:
-                return "Select a measure";
-            default:
-                return name();
-        }
+    private final String name;
+    private final boolean extended;
+
+    Measure(String name, boolean extended){
+        this.name = name;
+        this.extended = extended;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isExtended() {
+        return extended;
     }
 }
