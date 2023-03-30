@@ -5,6 +5,7 @@ import com.ryunezm.apps.javacurrconv.model.enums.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Objects;
 
 public class mainWindow extends JFrame {
 
@@ -204,9 +205,9 @@ public class mainWindow extends JFrame {
         try{
             double entryValue = Double.parseDouble(nfTop.getText());
 
-            String selMeasure = listMeasures_ComboBox.getSelectedItem().toString();
-            String selMeasTop = listTop_ComboBox.getSelectedItem().toString();
-            String selMeasBottom = listBottom_ComboBox.getSelectedItem().toString();
+            String selMeasure = Objects.requireNonNull(listMeasures_ComboBox.getSelectedItem()).toString();
+            String selMeasTop = Objects.requireNonNull(listTop_ComboBox.getSelectedItem()).toString();
+            String selMeasBottom = Objects.requireNonNull(listBottom_ComboBox.getSelectedItem()).toString();
             Measure selMeasureEnum = Measure.valueOf(selMeasure.toUpperCase());
 
             switch (selMeasureEnum){
