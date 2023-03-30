@@ -8,71 +8,55 @@ import java.awt.event.*;
 
 public class mainWindow extends JFrame {
 
+    private JComboBox<Object> listMeasures_ComboBox;
     private JComboBox<Object> listTop_ComboBox;
     private JComboBox<Object> listBottom_ComboBox;
     private JTextField nfTop;
     private JTextField nfBottom;
     private JCheckBox showExtendedMeasuresCheckBox;
     private JLabel converter_Label;
-    private JComboBox listMeasures_ComboBox;
     private JPanel mainPanel;
     private JButton converterButton;
 
     public mainWindow(){
         setTitle("Converter");
         setSize(600, 250);
+        setResizable(false);
         setMaximumSize(new Dimension(600, 250));
         setMinimumSize(new Dimension(600, 250));
         setPreferredSize(new Dimension(600, 250));
         setContentPane(mainPanel);
-        listMeasures_ComboBox.setSelectedIndex(-1);
-        //listMeasures_ComboBox.setFocusable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
         initiateComboBox();
         updateComboBox();
 
-        converterButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    double entryValue = Double.parseDouble(nfTop.getText());
-                    nfBottom.setText(String.valueOf(entryValue/100));
+        converterButton.addActionListener(e -> {
+            try{
+                double entryValue = Double.parseDouble(nfTop.getText());
+                double outValue = entryValue/100;
+                //System.out.println(listMeasures_ComboBox.getSelectedItem().getClass());
+                nfBottom.setText(String.valueOf(outValue));
 
-                } catch (NumberFormatException ex){
-                    System.out.println("Invalid number!!!");
-                    JOptionPane.showMessageDialog(null, "Invalid number!!!");
-                    nfBottom.setText("");
-
-                }
+            } catch (NumberFormatException ex){
+                System.out.println("Invalid number!!!");
+                JOptionPane.showMessageDialog(null, "Invalid number!!!");
+                nfBottom.setText("");
             }
         });
 
-        showExtendedMeasuresCheckBox.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        showExtendedMeasuresCheckBox.addActionListener(e -> {
 
+            updateComboBoxesMeasures();
+            if(showExtendedMeasuresCheckBox.isSelected()){
+                System.out.println("AAA!!!");
                 updateComboBoxesMeasures();
-                if(showExtendedMeasuresCheckBox.isSelected()){
-                    System.out.println("AAA!!!");
-                    updateComboBoxesMeasures();
-                }
+            }
 
-                else {
-                    System.out.println("BBB!!!");
-                    updateComboBoxesMeasures();
-                }
+            else {
+                System.out.println("BBB!!!");
+                updateComboBoxesMeasures();
             }
         });
 
@@ -88,11 +72,6 @@ public class mainWindow extends JFrame {
         converterButton.setEnabled(false);
 
         listMeasures_ComboBox.addFocusListener(new FocusAdapter() {
-            /**
-             * Invoked when a component gains the keyboard focus.
-             *
-             * @param e
-             */
             @Override
             public void focusGained(FocusEvent e) {
                 System.out.println("Focus gained");
@@ -108,6 +87,7 @@ public class mainWindow extends JFrame {
 
         listMeasures_ComboBox.addActionListener(e -> {
             String selectedMeasure = (String) listMeasures_ComboBox.getItemAt(listMeasures_ComboBox.getSelectedIndex());
+
             if (selectedMeasure!=null){
                 if (listMeasures_ComboBox.getItemCount()== Measure.values().length){
                     listMeasures_ComboBox.removeItemAt(0);
@@ -123,7 +103,6 @@ public class mainWindow extends JFrame {
             listTop_ComboBox.removeAllItems();
             showExtendedMeasuresCheckBox.setSelected(false);
             updateComboBoxesMeasures();
-
         });
 
     }
@@ -135,12 +114,13 @@ public class mainWindow extends JFrame {
             Measure selMeasure = Measure.valueOf(selectedMeasure.toUpperCase());
 
             switch (selMeasure) {
-                case CURRENCY -> {updateComboBoxForCurrencyMeasure(showExtendedMeasuresCheckBox.isSelected());}
-                case LENGTH -> {updateComboBoxForLengthMeasure(showExtendedMeasuresCheckBox.isSelected());}
-                case MASS -> {updateComboBoxForMassMeasure(showExtendedMeasuresCheckBox.isSelected());}
-                case TEMPERATURE -> {updateComboBoxForTemperatureMeasure(showExtendedMeasuresCheckBox.isSelected());}
-                case TIME -> {updateComboBoxForTimeMeasure(showExtendedMeasuresCheckBox.isSelected());}
-                default -> {}
+                case SELECT_A_MEASURE -> {}
+                case CURRENCY -> updateComboBoxForCurrencyMeasure(showExtendedMeasuresCheckBox.isSelected());
+                case LENGTH -> updateComboBoxForLengthMeasure(showExtendedMeasuresCheckBox.isSelected());
+                case MASS -> updateComboBoxForMassMeasure(showExtendedMeasuresCheckBox.isSelected());
+                case TEMPERATURE -> updateComboBoxForTemperatureMeasure(showExtendedMeasuresCheckBox.isSelected());
+                case TIME -> updateComboBoxForTimeMeasure(showExtendedMeasuresCheckBox.isSelected());
+                default -> System.out.println("default");
             }
         } catch (Exception ex){
             System.out.println("Exception, dear Lord");
@@ -161,31 +141,47 @@ public class mainWindow extends JFrame {
         showExtendedMeasuresCheckBox.setEnabled(Measure.LENGTH.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
+        listBottom_ComboBox.removeAllItems();
+        listTop_ComboBox.removeAllItems();
+
         if (extendedMeasure){
             for (Length length : Length.values()) {
                 listTop_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
                 listBottom_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
             }
         }
-        if (extendedMeasure==false)
+        if (!extendedMeasure)
         {
             for (Length length : Length.values()) {
-                if (length.isCommonness()==false){
+                if (length.isCommonness()){
                     listTop_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
                     listBottom_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
                 }
             }
         }
-
     }
 
     private void updateComboBoxForMassMeasure(Boolean extendedMeasure){
         showExtendedMeasuresCheckBox.setEnabled(Measure.MASS.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
-        for (Mass mass : Mass.values()) {
-            listTop_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
-            listBottom_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+        listBottom_ComboBox.removeAllItems();
+        listTop_ComboBox.removeAllItems();
+
+        if (extendedMeasure){
+            for (Mass mass : Mass.values()) {
+                listTop_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+                listBottom_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+            }
+        }
+        if (!extendedMeasure)
+        {
+            for (Mass mass : Mass.values()) {
+                if (mass.isCommonness()){
+                    listTop_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+                    listBottom_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+                }
+            }
         }
     }
 
@@ -203,15 +199,29 @@ public class mainWindow extends JFrame {
         nfBottom.setText("");
         nfTop.setText("");
         showExtendedMeasuresCheckBox.setEnabled(Measure.TIME.isExtended());
-        for (Time time : Time.values()) {
-            listTop_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
-            listBottom_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+        listBottom_ComboBox.removeAllItems();
+        listTop_ComboBox.removeAllItems();
+
+        if (extendedMeasure){
+            for (Time time : Time.values()) {
+                listTop_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+                listBottom_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+            }
+        }
+        if (!extendedMeasure)
+        {
+            for (Time time : Time.values()) {
+                if (time.isCommonness()){
+                    listTop_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+                    listBottom_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+                }
+            }
         }
     }
 
     //Main method
     public static void main(String[] args) {
         FlatLightLaf.setup();
-        mainWindow mw = new mainWindow();
+        var mw = new mainWindow();
     }
 }
