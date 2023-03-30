@@ -249,8 +249,8 @@ public class mainWindow extends JFrame {
                     for(Temperature temperature: Temperature.values()){
                         String timeNameTop = temperature.getName() + " (" + temperature.getSymbol() + ")";
                         String timeNameBottom = temperature.getName() + " (" + temperature.getSymbol() + ")";
-                        //if(selMeasTop.equals(timeNameTop)) {factorTop = temperature.getFactor();}
-                        //if(selMeasBottom.equals(timeNameBottom)){factorBottom = temperature.getFactor();}
+                        if(selMeasTop.equals(timeNameTop)) {factorTop = temperature.getFactor();}
+                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = temperature.getFactor();}
                     }
                 }
                 case SELECT_A_MEASURE -> System.out.println("");
