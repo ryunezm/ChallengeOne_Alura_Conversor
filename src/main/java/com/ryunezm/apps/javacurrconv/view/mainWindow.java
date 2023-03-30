@@ -25,6 +25,7 @@ public class mainWindow extends JFrame {
         setMaximumSize(new Dimension(600, 250));
         setMinimumSize(new Dimension(600, 250));
         setPreferredSize(new Dimension(600, 250));
+        setLocationRelativeTo(null);
         setContentPane(mainPanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
@@ -32,34 +33,13 @@ public class mainWindow extends JFrame {
         initiateComboBox();
         updateComboBox();
 
-        converterButton.addActionListener(e -> {
-            try{
-                double entryValue = Double.parseDouble(nfTop.getText());
-                double outValue = entryValue/100;
-                //System.out.println(listMeasures_ComboBox.getSelectedItem().getClass());
-                nfBottom.setText(String.valueOf(outValue));
-
-            } catch (NumberFormatException ex){
-                System.out.println("Invalid number!!!");
-                JOptionPane.showMessageDialog(null, "Invalid number!!!");
-                nfBottom.setText("");
-            }
-        });
+        converterButton.addActionListener(e -> calculateConversion());
 
         showExtendedMeasuresCheckBox.addActionListener(e -> {
-
             updateComboBoxesMeasures();
-            if(showExtendedMeasuresCheckBox.isSelected()){
-                System.out.println("AAA!!!");
-                updateComboBoxesMeasures();
-            }
-
-            else {
-                System.out.println("BBB!!!");
-                updateComboBoxesMeasures();
-            }
+            if(showExtendedMeasuresCheckBox.isSelected()){updateComboBoxesMeasures();}
+            else {updateComboBoxesMeasures();}
         });
-
     }
 
     //Initializers for ComboBoxes
@@ -217,6 +197,75 @@ public class mainWindow extends JFrame {
                 }
             }
         }
+    }
+
+    private void calculateConversion(){
+        System.out.println("Hi there, I'm converting");
+        try{
+            double entryValue = Double.parseDouble(nfTop.getText());
+            double outValue=1;
+            double factorTop=1;
+            double factorBottom=1;
+            String selMeasure = listMeasures_ComboBox.getSelectedItem().toString();
+            String selMeasTop = listTop_ComboBox.getSelectedItem().toString();
+            String selMeasBottom = listBottom_ComboBox.getSelectedItem().toString();
+
+            Measure selMeasureEnum = Measure.valueOf(selMeasure.toUpperCase());
+
+            switch (selMeasureEnum){
+                case MASS -> {
+                    for(Mass mass: Mass.values()){
+                        String massNameTop = mass.getName() + " (" + mass.getSymbol() + ")";
+                        String massNameBottom = mass.getName() + " (" + mass.getSymbol() + ")";
+                        if(selMeasTop.equals(massNameTop)) {factorTop = mass.getFactor();}
+                        if(selMeasBottom.equals(massNameBottom)){factorBottom = mass.getFactor();}
+                    }
+                }
+                case TIME -> {
+                    for(Time time: Time.values()){
+                        String timeNameTop = time.getName() + " (" + time.getSymbol() + ")";
+                        String timeNameBottom = time.getName() + " (" + time.getSymbol() + ")";
+                        if(selMeasTop.equals(timeNameTop)) {factorTop = time.getFactor();}
+                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = time.getFactor();}
+                    }
+                }
+                case LENGTH -> {
+                    for(Length length: Length.values()){
+                        String timeNameTop = length.getName() + " (" + length.getSymbol() + ")";
+                        String timeNameBottom = length.getName() + " (" + length.getSymbol() + ")";
+                        if(selMeasTop.equals(timeNameTop)) {factorTop = length.getFactor();}
+                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = length.getFactor();}
+                    }
+                }
+                case CURRENCY -> {
+                    for(Currency currency: Currency.values()){
+                        String timeNameTop = currency.getName() + " (" + currency.getSymbol() + ")";
+                        String timeNameBottom = currency.getName() + " (" + currency.getSymbol() + ")";
+                        if(selMeasTop.equals(timeNameTop)) {factorTop = currency.getFactor();}
+                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = currency.getFactor();}
+                    }
+                }
+                case TEMPERATURE -> {
+                    for(Temperature temperature: Temperature.values()){
+                        String timeNameTop = temperature.getName() + " (" + temperature.getSymbol() + ")";
+                        String timeNameBottom = temperature.getName() + " (" + temperature.getSymbol() + ")";
+                        //if(selMeasTop.equals(timeNameTop)) {factorTop = temperature.getFactor();}
+                        //if(selMeasBottom.equals(timeNameBottom)){factorBottom = temperature.getFactor();}
+                    }
+                }
+                case SELECT_A_MEASURE -> System.out.println("");
+                default -> {}
+            }
+
+            outValue = entryValue*factorTop/factorBottom;
+            nfBottom.setText(String.valueOf(outValue));
+
+        } catch (NumberFormatException ex){
+            System.out.println("Invalid number!!!");
+            JOptionPane.showMessageDialog(null, "Invalid number!!!");
+            nfBottom.setText("");
+        }
+
     }
 
     //Main method
