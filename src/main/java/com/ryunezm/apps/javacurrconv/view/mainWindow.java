@@ -170,9 +170,22 @@ public class mainWindow extends JFrame {
         showExtendedMeasuresCheckBox.setEnabled(Measure.TEMPERATURE.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
-        for (Temperature temperature : Temperature.values()) {
-            listTop_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
-            listBottom_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+        showExtendedMeasuresCheckBox.setEnabled(Measure.TEMPERATURE.isExtended());
+        listBottom_ComboBox.removeAllItems();
+        listTop_ComboBox.removeAllItems();
+        if(extendedMeasure){
+            for (Temperature temperature : Temperature.values()) {
+                listTop_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+                listBottom_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+            }
+        }
+        if(!extendedMeasure){
+            for (Temperature temperature : Temperature.values()) {
+                if (temperature.isCommonness()){
+                    listTop_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+                    listBottom_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+                }
+            }
         }
     }
 

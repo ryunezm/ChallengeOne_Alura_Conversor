@@ -5,7 +5,7 @@ public enum Measure {
     CURRENCY("Currency", false),
     LENGTH("Length", true),
     MASS("Mass", true),
-    TEMPERATURE("Temperature", false),
+    TEMPERATURE("Temperature", true),
     TIME("Time", true);
 
     private final String name;
