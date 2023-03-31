@@ -27,6 +27,6 @@ public class UnitMass extends Unit {
     @Override
     public double Convert(double quantity, Unit unitTarget) {
         UnitMass unitFinal = (UnitMass) unitTarget;
-        return 0;
+        return 1;
     }
 }
