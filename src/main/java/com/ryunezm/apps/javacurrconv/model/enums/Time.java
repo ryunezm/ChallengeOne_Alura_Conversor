@@ -1,6 +1,6 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
-public enum Time {
+public enum Time implements EnumFunctions {
     seconds("Seconds", "s", 1, true),
     quettaseconds("Quettaseconds", "Qs", 1e30, false),
     ronnaseconds("Ronnaseconds", "Rs", 1e27, false),
@@ -32,10 +32,10 @@ public enum Time {
     weeks("Weeks", "week", 604800, true),
     years("Years", "year", 31557600, true);
 
-    private String name;
-    private String symbol;
-    private double factor;
-    private boolean commonness;
+    private final String name;
+    private final String symbol;
+    private final double factor;
+    private final boolean commonness;
 
     Time(String name, String symbol, double factor, boolean commonness) {
         this.name = name;
@@ -44,19 +44,14 @@ public enum Time {
         this.commonness = commonness;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public String getSymbol() {
-        return symbol;
-    }
+    public String getSymbol() { return symbol; }
 
-    public double getFactor() {
-        return factor;
-    }
+    public double getFactor() { return factor; }
 
-    public boolean isCommonness() {
-        return commonness;
-    }
+    public boolean isCommonness() { return commonness; }
+
+    @Override
+    public String getLongName() { return name + " (" + symbol+ ")" ; }
 }

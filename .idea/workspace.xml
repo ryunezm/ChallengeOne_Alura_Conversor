@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230331: fixing temperature conversion.">
+    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230331: conversion logic from main window to classes.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/EnumFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitCurrency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Temperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -41,27 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;316&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ryunezm/Documents/JARLbis/flatlaf-3.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "316",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/ryunezm/Documents/JARLbis/flatlaf-3.0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ryunezm\IdeaProjects\Java Currency Converter\src\main\java\com\ryunezm\apps\javacurrconv\test" />
@@ -178,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680292091908</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="20230331: conversion logic from main window to classes.">
+      <created>1680293759014</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680293759014</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,7 +222,8 @@
     <MESSAGE value="20230330: adding conversion." />
     <MESSAGE value="20230330: fixing code." />
     <MESSAGE value="20230331: fixing temperature conversion." />
-    <option name="LAST_COMMIT_MESSAGE" value="20230331: fixing temperature conversion." />
+    <MESSAGE value="20230331: conversion logic from main window to classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="20230331: conversion logic from main window to classes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -217,6 +234,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java_Currency_Converter$mainWindow.ic" NAME="mainWindow Coverage Results" MODIFIED="1678908334625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -113,8 +113,8 @@ public class mainWindow extends JFrame {
         nfBottom.setText("");
         nfTop.setText("");
         for (Currency currency : Currency.values()) {
-            listTop_ComboBox.addItem(currency.getName() + " (" + currency.getSymbol() + ")");
-            listBottom_ComboBox.addItem(currency.getName() + " (" + currency.getSymbol() + ")");
+            listTop_ComboBox.addItem(currency.getLongName());
+            listBottom_ComboBox.addItem(currency.getLongName());
         }
     }
 
@@ -127,16 +127,16 @@ public class mainWindow extends JFrame {
 
         if (extendedMeasure){
             for (Length length : Length.values()) {
-                listTop_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
-                listBottom_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
+                listTop_ComboBox.addItem(length.getLongName());
+                listBottom_ComboBox.addItem(length.getLongName());
             }
         }
         if (!extendedMeasure)
         {
             for (Length length : Length.values()) {
                 if (length.isCommonness()){
-                    listTop_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
-                    listBottom_ComboBox.addItem(length.getName() + " (" + length.getSymbol() + ")");
+                    listTop_ComboBox.addItem(length.getLongName());
+                    listBottom_ComboBox.addItem(length.getLongName());
                 }
             }
         }
@@ -151,16 +151,16 @@ public class mainWindow extends JFrame {
 
         if (extendedMeasure){
             for (Mass mass : Mass.values()) {
-                listTop_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
-                listBottom_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+                listTop_ComboBox.addItem(mass.getLongName());
+                listBottom_ComboBox.addItem(mass.getLongName());
             }
         }
         if (!extendedMeasure)
         {
             for (Mass mass : Mass.values()) {
                 if (mass.isCommonness()){
-                    listTop_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
-                    listBottom_ComboBox.addItem(mass.getName() + " (" + mass.getSymbol() + ")");
+                    listTop_ComboBox.addItem(mass.getLongName());
+                    listBottom_ComboBox.addItem(mass.getLongName());
                 }
             }
         }
@@ -175,15 +175,15 @@ public class mainWindow extends JFrame {
         listTop_ComboBox.removeAllItems();
         if(extendedMeasure){
             for (Temperature temperature : Temperature.values()) {
-                listTop_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
-                listBottom_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+                listTop_ComboBox.addItem(temperature.getLongName());
+                listBottom_ComboBox.addItem(temperature.getLongName());
             }
         }
         if(!extendedMeasure){
             for (Temperature temperature : Temperature.values()) {
                 if (temperature.isCommonness()){
-                    listTop_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
-                    listBottom_ComboBox.addItem(temperature.getName() + " (" + temperature.getSymbol() + ")");
+                    listTop_ComboBox.addItem(temperature.getLongName());
+                    listBottom_ComboBox.addItem(temperature.getLongName());
                 }
             }
         }
@@ -198,16 +198,16 @@ public class mainWindow extends JFrame {
 
         if (extendedMeasure){
             for (Time time : Time.values()) {
-                listTop_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
-                listBottom_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+                listTop_ComboBox.addItem(time.getLongName());
+                listBottom_ComboBox.addItem(time.getLongName());
             }
         }
         if (!extendedMeasure)
         {
             for (Time time : Time.values()) {
                 if (time.isCommonness()){
-                    listTop_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
-                    listBottom_ComboBox.addItem(time.getName() + " (" + time.getSymbol() + ")");
+                    listTop_ComboBox.addItem(time.getLongName());
+                    listBottom_ComboBox.addItem(time.getLongName());
                 }
             }
         }
@@ -229,8 +229,8 @@ public class mainWindow extends JFrame {
                     double factorTop=1;
                     double factorBottom=1;
                     for(Mass mass: Mass.values()){
-                        String massNameTop = mass.getName() + " (" + mass.getSymbol() + ")";
-                        String massNameBottom = mass.getName() + " (" + mass.getSymbol() + ")";
+                        String massNameTop = mass.getLongName();
+                        String massNameBottom = mass.getLongName();
                         if(selMeasTop.equals(massNameTop)) {factorTop = mass.getFactor();}
                         if(selMeasBottom.equals(massNameBottom)){factorBottom = mass.getFactor();}
                     }
@@ -239,12 +239,16 @@ public class mainWindow extends JFrame {
                 }
                 case TIME -> {
                     double outValue;
+                    Time originUnit;
+                    Time targetUnit;
                     double factorTop=1;
                     double factorBottom=1;
                     for(Time time: Time.values()){
-                        String timeNameTop = time.getName() + " (" + time.getSymbol() + ")";
-                        String timeNameBottom = time.getName() + " (" + time.getSymbol() + ")";
-                        if(selMeasTop.equals(timeNameTop)) {factorTop = time.getFactor();}
+                        String timeNameTop = time.getLongName();
+                        String timeNameBottom = time.getLongName();
+                        if(selMeasTop.equals(timeNameTop)) {
+                            factorTop = time.getFactor();
+                        }
                         if(selMeasBottom.equals(timeNameBottom)){factorBottom = time.getFactor();}
                     }
                     outValue = entryValue*factorTop/factorBottom;
@@ -255,8 +259,8 @@ public class mainWindow extends JFrame {
                     double factorTop=1;
                     double factorBottom=1;
                     for(Length length: Length.values()){
-                        String timeNameTop = length.getName() + " (" + length.getSymbol() + ")";
-                        String timeNameBottom = length.getName() + " (" + length.getSymbol() + ")";
+                        String timeNameTop = length.getLongName();
+                        String timeNameBottom = length.getLongName();
                         if(selMeasTop.equals(timeNameTop)) {factorTop = length.getFactor();}
                         if(selMeasBottom.equals(timeNameBottom)){factorBottom = length.getFactor();}
                     }
@@ -268,8 +272,8 @@ public class mainWindow extends JFrame {
                     double factorTop=1;
                     double factorBottom=1;
                     for(Currency currency: Currency.values()){
-                        String timeNameTop = currency.getName() + " (" + currency.getSymbol() + ")";
-                        String timeNameBottom = currency.getName() + " (" + currency.getSymbol() + ")";
+                        String timeNameTop = currency.getLongName();
+                        String timeNameBottom = currency.getLongName();
                         if(selMeasTop.equals(timeNameTop)) {factorTop = currency.getFactor();}
                         if(selMeasBottom.equals(timeNameBottom)){factorBottom = currency.getFactor();}
                     }
@@ -278,8 +282,8 @@ public class mainWindow extends JFrame {
                 }
                 case TEMPERATURE -> {
                     for(Temperature temperature: Temperature.values()){
-                        String timeNameTop = temperature.getName() + " (" + temperature.getSymbol() + ")";
-                        String timeNameBottom = temperature.getName() + " (" + temperature.getSymbol() + ")";
+                        String timeNameTop = temperature.getLongName();
+                        String timeNameBottom = temperature.getLongName();
                         //if(selMeasTop.equals(timeNameTop)) {factorTop = temperature.getFactor();}
                         //if(selMeasBottom.equals(timeNameBottom)){factorBottom = temperature.getFactor();}
                     }

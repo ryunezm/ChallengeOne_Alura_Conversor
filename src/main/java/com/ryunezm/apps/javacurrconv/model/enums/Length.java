@@ -2,7 +2,7 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitLength;
 
-public enum Length {
+public enum Length implements EnumFunctions {
 
     meter("Meters", "m", 1, true),
     quettameters("Quettameters", "Qm", 1e30, false),
@@ -47,10 +47,10 @@ public enum Length {
     parsec("Parsec", "pc", 3.0856775814913673e16, false);
 
 
-    private String name;
-    private String symbol;
-    private double factor;
-    private boolean commonness;
+    private final String name;
+    private final String symbol;
+    private final double factor;
+    private final boolean commonness;
 
     Length(String name, String symbol, double factor, boolean commonness) {
         this.name = name;
@@ -78,4 +78,7 @@ public enum Length {
     public UnitLength getUnit(){
         return new UnitLength(name, symbol, factor, commonness);
     }
+
+    @Override
+    public String getLongName() { return name + " (" + symbol+ ")" ; }
 }

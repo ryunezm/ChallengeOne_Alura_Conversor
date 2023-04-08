@@ -2,7 +2,7 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitMass;
 
-public enum Mass {
+public enum Mass implements EnumFunctions {
 
     gram("Grams", "g", 1, true),
     quettagrams("Quettagrams", "Qg", 1e30, false),
@@ -73,4 +73,7 @@ public enum Mass {
     public UnitMass getUnit() {
         return new UnitMass(name, symbol, factor, commonness);
     }
+
+    @Override
+    public String getLongName() { return name + " (" + symbol+ ")" ; }
 }

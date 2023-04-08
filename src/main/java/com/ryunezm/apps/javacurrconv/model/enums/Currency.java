@@ -2,7 +2,7 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitCurrency;
 
-public enum Currency {
+public enum Currency implements EnumFunctions {
     USD("USD", "U.S. dollar", "US$",1 ),
     AED("AED", "UAE dirham", "د.إ", 3.67),
     AUD("AUD", "Australian dollar", "A$", 1.52),
@@ -73,4 +73,7 @@ public enum Currency {
     public UnitCurrency getUnit(){
         return new UnitCurrency(code, name, symbol, factor);
     }
+
+    @Override
+    public String getLongName() { return name + " (" + symbol+ ")" ; }
 }

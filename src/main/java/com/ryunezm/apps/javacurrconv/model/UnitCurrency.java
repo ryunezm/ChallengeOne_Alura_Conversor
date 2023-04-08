@@ -9,19 +9,10 @@ public class UnitCurrency extends Unit {
         this.factor = factor;
     }
 
-    public String getCode() {
-        return code;
-    }
+    public String getCode() { return code; }
 
-    public double getFactor() {
-        return factor;
-    }
+    public double getFactor() { return factor; }
 
-    /**
-     * @param quantity
-     * @param unitTarget
-     * @return
-     */
     @Override
     public double Convert(double quantity, Unit unitTarget) {
         UnitCurrency unitFinal = (UnitCurrency) unitTarget;
