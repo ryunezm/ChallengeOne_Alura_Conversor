@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230331: conversion logic from main window to classes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/EnumFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitCurrency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Currency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Temperature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" afterDir="false" />
-    </list>
+    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230331: conversion logic from main window to classes." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,11 +42,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
+    "Downloaded.Files.Path.Enabled": "true",
     "OverrideImplement.generate.javadoc": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
@@ -64,7 +54,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "316",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ryunezm/Documents/JARLbis/flatlaf-3.0.jar",
+    "last_opened_file_path": "C:/Users/ryunezm/Desktop/GitHub/ChallengeOne_Alura_Conversor",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -79,6 +69,21 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ryunezm\IdeaProjects\Java Currency Converter\src\main\java\com\ryunezm\apps\javacurrconv\View" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ChallengeOne_Alura_Conversor" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ChallengeOne_Alura_Conversor" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
