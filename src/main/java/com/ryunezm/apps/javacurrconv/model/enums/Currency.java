@@ -55,20 +55,12 @@ public enum Currency implements EnumFunctions {
         this.factor = factor;
     }
 
-    public String getCode() {
-        return code;
-    }
-
     public String getName() {
         return name;
     }
 
     public String getSymbol() {
         return symbol;
-    }
-
-    public double getFactor() {
-        return factor;
     }
 
     public UnitCurrency getUnit(){

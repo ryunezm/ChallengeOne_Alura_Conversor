@@ -52,8 +52,6 @@ public enum Time implements EnumFunctions {
 
     public String getSymbol() { return symbol; }
 
-    public double getFactor() { return factor; }
-
     public boolean isCommonness() { return commonness; }
 
     public UnitTime getUnit() {

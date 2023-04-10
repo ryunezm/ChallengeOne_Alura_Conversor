@@ -69,10 +69,6 @@ public enum Length implements EnumFunctions {
         return symbol;
     }
 
-    public double getFactor() {
-        return factor;
-    }
-
     public boolean isCommonness() {
         return commonness;
     }

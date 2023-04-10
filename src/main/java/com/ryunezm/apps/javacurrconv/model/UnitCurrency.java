@@ -9,8 +9,6 @@ public class UnitCurrency extends Unit {
         this.factor = factor;
     }
 
-    public String getCode() { return code; }
-
     public double getFactor() { return factor; }
 
     @Override

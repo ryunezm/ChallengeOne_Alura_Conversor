@@ -17,8 +17,6 @@ public abstract class Unit {
         return symbol;
     }
 
-    public String getLongName(){ return name + " (" + symbol+ ")" ; }
-
     public abstract double Convert(double quantity, Unit outUnit);
 
 }
