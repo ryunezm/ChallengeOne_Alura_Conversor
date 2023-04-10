@@ -14,8 +14,8 @@ public class UnitCurrency extends Unit {
     public double getFactor() { return factor; }
 
     @Override
-    public double Convert(double quantity, Unit unitTarget) {
-        UnitCurrency unitFinal = (UnitCurrency) unitTarget;
+    public double Convert(double quantity, Unit outUnit) {
+        UnitCurrency unitFinal = (UnitCurrency) outUnit;
         return (quantity/factor)*(unitFinal.getFactor());
     }
 }

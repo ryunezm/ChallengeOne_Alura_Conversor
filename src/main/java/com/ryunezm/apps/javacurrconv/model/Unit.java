@@ -17,5 +17,5 @@ public abstract class Unit {
         return symbol;
     }
 
-    public abstract double Convert(double quantity, Unit unitTarget);
+    public abstract double Convert(double quantity, Unit outUnit);
 }

@@ -19,14 +19,10 @@ public class UnitMass extends Unit {
         return commonness;
     }
 
-    /**
-     * @param quantity
-     * @param unitTarget
-     * @return
-     */
+
     @Override
-    public double Convert(double quantity, Unit unitTarget) {
-        UnitMass unitFinal = (UnitMass) unitTarget;
+    public double Convert(double quantity, Unit outUnit) {
+        UnitMass outUnitFinal = (UnitMass) outUnit;
         return 1;
     }
 }

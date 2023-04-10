@@ -12,13 +12,8 @@ public class UnitTemperature extends Unit {
         return commonness;
     }
 
-    /**
-     * @param quantity
-     * @param unitTarget
-     * @return
-     */
     @Override
-    public double Convert(double quantity, Unit unitTarget) {
+    public double Convert(double quantity, Unit outUnit) {
         return 0;
     }
 }

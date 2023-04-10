@@ -18,14 +18,9 @@ public class UnitLength extends Unit {
         return commonness;
     }
 
-    /**
-     * @param quantity
-     * @param unitTarget
-     * @return
-     */
     @Override
-    public double Convert(double quantity, Unit unitTarget) {
-        UnitLength unitFinal = (UnitLength) unitTarget;
+    public double Convert(double quantity, Unit outUnit) {
+        UnitLength unitFinal = (UnitLength) outUnit;
         return (quantity/factor)*(unitFinal.getFactor());
     }
 }

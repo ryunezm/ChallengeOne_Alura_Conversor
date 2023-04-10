@@ -1,5 +1,7 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
+import com.ryunezm.apps.javacurrconv.model.UnitTime;
+
 public enum Time implements EnumFunctions {
     seconds("Seconds", "s", 1, true),
     quettaseconds("Quettaseconds", "Qs", 1e30, false),
@@ -51,6 +53,10 @@ public enum Time implements EnumFunctions {
     public double getFactor() { return factor; }
 
     public boolean isCommonness() { return commonness; }
+
+    public UnitTime getUnit() {
+        return new UnitTime(name, symbol, factor, commonness);
+    }
 
     @Override
     public String getLongName() { return name + " (" + symbol+ ")" ; }

@@ -1,6 +1,7 @@
 package com.ryunezm.apps.javacurrconv.view;
 
 import com.formdev.flatlaf.*;
+import com.ryunezm.apps.javacurrconv.model.*;
 import com.ryunezm.apps.javacurrconv.model.enums.*;
 import javax.swing.*;
 import java.awt.*;
@@ -125,19 +126,10 @@ public class mainWindow extends JFrame {
         listBottom_ComboBox.removeAllItems();
         listTop_ComboBox.removeAllItems();
 
-        if (extendedMeasure){
-            for (Length length : Length.values()) {
+        for (Length length : Length.values()){
+            if (extendedMeasure || length.isCommonness()){
                 listTop_ComboBox.addItem(length.getLongName());
                 listBottom_ComboBox.addItem(length.getLongName());
-            }
-        }
-        if (!extendedMeasure)
-        {
-            for (Length length : Length.values()) {
-                if (length.isCommonness()){
-                    listTop_ComboBox.addItem(length.getLongName());
-                    listBottom_ComboBox.addItem(length.getLongName());
-                }
             }
         }
     }
@@ -149,19 +141,10 @@ public class mainWindow extends JFrame {
         listBottom_ComboBox.removeAllItems();
         listTop_ComboBox.removeAllItems();
 
-        if (extendedMeasure){
-            for (Mass mass : Mass.values()) {
+        for (Mass mass : Mass.values()) {
+            if (extendedMeasure || mass.isCommonness()){
                 listTop_ComboBox.addItem(mass.getLongName());
                 listBottom_ComboBox.addItem(mass.getLongName());
-            }
-        }
-        if (!extendedMeasure)
-        {
-            for (Mass mass : Mass.values()) {
-                if (mass.isCommonness()){
-                    listTop_ComboBox.addItem(mass.getLongName());
-                    listBottom_ComboBox.addItem(mass.getLongName());
-                }
             }
         }
     }
@@ -173,18 +156,11 @@ public class mainWindow extends JFrame {
         showExtendedMeasuresCheckBox.setEnabled(Measure.TEMPERATURE.isExtended());
         listBottom_ComboBox.removeAllItems();
         listTop_ComboBox.removeAllItems();
-        if(extendedMeasure){
-            for (Temperature temperature : Temperature.values()) {
+
+        for (Temperature temperature : Temperature.values()){
+            if (extendedMeasure || temperature.isCommonness()){
                 listTop_ComboBox.addItem(temperature.getLongName());
                 listBottom_ComboBox.addItem(temperature.getLongName());
-            }
-        }
-        if(!extendedMeasure){
-            for (Temperature temperature : Temperature.values()) {
-                if (temperature.isCommonness()){
-                    listTop_ComboBox.addItem(temperature.getLongName());
-                    listBottom_ComboBox.addItem(temperature.getLongName());
-                }
             }
         }
     }
@@ -196,19 +172,10 @@ public class mainWindow extends JFrame {
         listBottom_ComboBox.removeAllItems();
         listTop_ComboBox.removeAllItems();
 
-        if (extendedMeasure){
-            for (Time time : Time.values()) {
+        for (Time time : Time.values()){
+            if (extendedMeasure || time.isCommonness()){
                 listTop_ComboBox.addItem(time.getLongName());
                 listBottom_ComboBox.addItem(time.getLongName());
-            }
-        }
-        if (!extendedMeasure)
-        {
-            for (Time time : Time.values()) {
-                if (time.isCommonness()){
-                    listTop_ComboBox.addItem(time.getLongName());
-                    listBottom_ComboBox.addItem(time.getLongName());
-                }
             }
         }
     }
@@ -226,67 +193,82 @@ public class mainWindow extends JFrame {
             switch (selMeasureEnum){
                 case MASS -> {
                     double outValue;
-                    double factorTop=1;
-                    double factorBottom=1;
+                    UnitMass inUnit = null;
+                    UnitMass outUnit = null;
+
                     for(Mass mass: Mass.values()){
                         String massNameTop = mass.getLongName();
                         String massNameBottom = mass.getLongName();
-                        if(selMeasTop.equals(massNameTop)) {factorTop = mass.getFactor();}
-                        if(selMeasBottom.equals(massNameBottom)){factorBottom = mass.getFactor();}
+
+                        if(selMeasTop.equals(massNameTop)) {inUnit = mass.getUnit();}
+                        if(selMeasBottom.equals(massNameBottom)){outUnit = mass.getUnit();}
                     }
-                    outValue = entryValue*factorTop/factorBottom;
+
+                    assert inUnit != null;
+                    outValue = inUnit.Convert(entryValue, outUnit);
                     nfBottom.setText(String.valueOf(outValue));
                 }
                 case TIME -> {
                     double outValue;
-                    Time originUnit;
-                    Time targetUnit;
-                    double factorTop=1;
-                    double factorBottom=1;
+                    UnitTime inUnit = null;
+                    UnitTime outUnit = null;
+
                     for(Time time: Time.values()){
                         String timeNameTop = time.getLongName();
                         String timeNameBottom = time.getLongName();
-                        if(selMeasTop.equals(timeNameTop)) {
-                            factorTop = time.getFactor();
-                        }
-                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = time.getFactor();}
+                        if(selMeasTop.equals(timeNameTop)) {inUnit = time.getUnit();}
+                        if(selMeasBottom.equals(timeNameBottom)){outUnit = time.getUnit();}
                     }
-                    outValue = entryValue*factorTop/factorBottom;
+                    assert inUnit != null;
+                    outValue = inUnit.Convert(entryValue, outUnit);
                     nfBottom.setText(String.valueOf(outValue));
                 }
                 case LENGTH -> {
                     double outValue;
-                    double factorTop=1;
-                    double factorBottom=1;
+                    UnitLength inUnit = null;
+                    UnitLength outUnit = null;
+
                     for(Length length: Length.values()){
                         String timeNameTop = length.getLongName();
                         String timeNameBottom = length.getLongName();
-                        if(selMeasTop.equals(timeNameTop)) {factorTop = length.getFactor();}
-                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = length.getFactor();}
+                        if(selMeasTop.equals(timeNameTop)) {inUnit = length.getUnit();}
+                        if(selMeasBottom.equals(timeNameBottom)){outUnit = length.getUnit();}
                     }
-                    outValue = entryValue*factorTop/factorBottom;
+                    assert inUnit != null;
+                    outValue = inUnit.Convert(entryValue, outUnit);
                     nfBottom.setText(String.valueOf(outValue));
                 }
                 case CURRENCY -> {
                     double outValue;
-                    double factorTop=1;
-                    double factorBottom=1;
+                    UnitCurrency inUnit = null;
+                    UnitCurrency outUnit = null;
+
                     for(Currency currency: Currency.values()){
                         String timeNameTop = currency.getLongName();
                         String timeNameBottom = currency.getLongName();
-                        if(selMeasTop.equals(timeNameTop)) {factorTop = currency.getFactor();}
-                        if(selMeasBottom.equals(timeNameBottom)){factorBottom = currency.getFactor();}
+                        if(selMeasTop.equals(timeNameTop)) {inUnit = currency.getUnit();}
+                        if(selMeasBottom.equals(timeNameBottom)){outUnit = currency.getUnit();}
                     }
-                    outValue = entryValue*factorTop/factorBottom;
+
+                    assert inUnit != null;
+                    outValue = inUnit.Convert(entryValue, outUnit);
                     nfBottom.setText(String.valueOf(outValue));
                 }
                 case TEMPERATURE -> {
+                    double outValue;
+                    UnitTemperature inUnit = null;
+                    UnitTemperature outUnit = null;
+
                     for(Temperature temperature: Temperature.values()){
                         String timeNameTop = temperature.getLongName();
                         String timeNameBottom = temperature.getLongName();
-                        //if(selMeasTop.equals(timeNameTop)) {factorTop = temperature.getFactor();}
-                        //if(selMeasBottom.equals(timeNameBottom)){factorBottom = temperature.getFactor();}
+                        if(selMeasTop.equals(timeNameTop)) {inUnit = temperature.getUnit();}
+                        if(selMeasBottom.equals(timeNameBottom)){outUnit = temperature.getUnit();}
                     }
+
+                    assert inUnit != null;
+                    outValue = inUnit.Convert(entryValue, outUnit);
+                    nfBottom.setText(String.valueOf(outValue));
                 }
                 case SELECT_A_MEASURE -> System.out.println(" * fuck this * ");
                 default -> {}
