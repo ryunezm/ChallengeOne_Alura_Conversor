@@ -35,7 +35,7 @@ public enum Temperature implements EnumFunctions {
     public boolean isCommonness() {return commonness;}
 
     public UnitTemperature getUnit() {
-        return new UnitTemperature(name, symbol, commonness);
+        return new UnitTemperature(name, symbol);
     }
 
     @Override

@@ -1,15 +1,9 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public class UnitTemperature extends Unit {
-    private boolean commonness;
 
-    public UnitTemperature(String name, String symbol, boolean commonness) {
+    public UnitTemperature(String name, String symbol) {
         super(name, symbol);
-        this.commonness = commonness;
-    }
-
-    public boolean isCommonness() {
-        return commonness;
     }
 
     @Override

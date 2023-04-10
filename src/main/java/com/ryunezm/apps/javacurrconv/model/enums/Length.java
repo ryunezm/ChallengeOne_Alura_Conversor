@@ -74,7 +74,7 @@ public enum Length implements EnumFunctions {
     }
 
     public UnitLength getUnit(){
-        return new UnitLength(name, symbol, factor, commonness);
+        return new UnitLength(name, symbol, factor);
     }
 
     @Override

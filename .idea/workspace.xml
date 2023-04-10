@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230410: cleaning code.">
+    <list default="true" id="dd896ccf-d1a9-408c-bb13-6b1a31bc3a1e" name="Changes" comment="20230410: cleaning code and fixing calculations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitLength.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitMass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitMass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTemperature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/UnitTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Length.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Mass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Measure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/_Measure_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Temperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Temperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/model/enums/Time.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ryunezm/apps/javacurrconv/view/mainWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681152860899</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="20230410: cleaning code and fixing calculations.">
+      <created>1681153911463</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1681153911463</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +287,8 @@
     <MESSAGE value="20230409: trying to move out logic from mainWindow" />
     <MESSAGE value="20230410: moving out logic from (switch case) mainWindow to classes." />
     <MESSAGE value="20230410: cleaning code." />
-    <option name="LAST_COMMIT_MESSAGE" value="20230410: cleaning code." />
+    <MESSAGE value="20230410: cleaning code and fixing calculations." />
+    <option name="LAST_COMMIT_MESSAGE" value="20230410: cleaning code and fixing calculations." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

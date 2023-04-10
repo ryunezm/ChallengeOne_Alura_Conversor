@@ -55,7 +55,7 @@ public enum Time implements EnumFunctions {
     public boolean isCommonness() { return commonness; }
 
     public UnitTime getUnit() {
-        return new UnitTime(name, symbol, factor, commonness);
+        return new UnitTime(name, symbol, factor);
     }
 
     @Override

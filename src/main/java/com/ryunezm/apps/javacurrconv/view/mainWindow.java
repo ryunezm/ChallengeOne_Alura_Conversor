@@ -114,8 +114,10 @@ public class mainWindow extends JFrame {
         nfBottom.setText("");
         nfTop.setText("");
         for (Currency currency : Currency.values()) {
-            listTop_ComboBox.addItem(currency.getLongName());
-            listBottom_ComboBox.addItem(currency.getLongName());
+            if(extendedMeasure || currency.isCommonness()){
+                listTop_ComboBox.addItem(currency.getLongName());
+                listBottom_ComboBox.addItem(currency.getLongName());
+            }
         }
     }
 

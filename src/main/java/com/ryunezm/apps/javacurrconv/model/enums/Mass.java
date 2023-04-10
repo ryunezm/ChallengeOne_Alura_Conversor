@@ -69,7 +69,7 @@ public enum Mass implements EnumFunctions {
     }
 
     public UnitMass getUnit() {
-        return new UnitMass(name, symbol, factor, commonness);
+        return new UnitMass(name, symbol, factor);
     }
 
     @Override
