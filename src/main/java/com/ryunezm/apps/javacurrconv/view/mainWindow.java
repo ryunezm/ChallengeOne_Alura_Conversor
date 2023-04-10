@@ -31,7 +31,7 @@ public class mainWindow extends JFrame {
         setContentPane(mainPanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-
+        converter_Label.setBorder(null);
         initiateComboBox();
         updateComboBox();
 
@@ -66,7 +66,6 @@ public class mainWindow extends JFrame {
     }
 
     public void updateComboBox(){
-
         listMeasures_ComboBox.addActionListener(e -> {
             String selectedMeasure = (String) listMeasures_ComboBox.getItemAt(listMeasures_ComboBox.getSelectedIndex());
 
