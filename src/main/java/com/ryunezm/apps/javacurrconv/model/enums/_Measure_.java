@@ -1,6 +1,6 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
-public enum Measure {
+public enum _Measure_ {
     SELECT_A_MEASURE("Select a measure", false),
     CURRENCY("Currency", false),
     LENGTH("Length", true),
@@ -11,7 +11,7 @@ public enum Measure {
     private final String name;
     private final boolean extended;
 
-    Measure(String name, boolean extended){
+    _Measure_(String name, boolean extended){
         this.name = name;
         this.extended = extended;
     }

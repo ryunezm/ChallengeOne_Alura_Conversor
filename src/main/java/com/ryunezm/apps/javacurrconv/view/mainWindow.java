@@ -60,7 +60,7 @@ public class mainWindow extends JFrame {
             }
         });
 
-        for (Measure measure : Measure.values()) {
+        for (_Measure_ measure : _Measure_.values()) {
             listMeasures_ComboBox.addItem(measure.getName());
         }
     }
@@ -71,7 +71,7 @@ public class mainWindow extends JFrame {
             String selectedMeasure = (String) listMeasures_ComboBox.getItemAt(listMeasures_ComboBox.getSelectedIndex());
 
             if (selectedMeasure!=null){
-                if (listMeasures_ComboBox.getItemCount()== Measure.values().length){
+                if (listMeasures_ComboBox.getItemCount()== _Measure_.values().length){
                     listMeasures_ComboBox.removeItemAt(0);
                     listMeasures_ComboBox.setFocusable(true);
                     listBottom_ComboBox.setEnabled(true);
@@ -93,7 +93,7 @@ public class mainWindow extends JFrame {
     private void updateComboBoxesMeasures(){
         try{
             String selectedMeasure = (String) listMeasures_ComboBox.getItemAt(listMeasures_ComboBox.getSelectedIndex());
-            Measure selMeasure = Measure.valueOf(selectedMeasure.toUpperCase());
+            _Measure_ selMeasure = _Measure_.valueOf(selectedMeasure.toUpperCase());
 
             switch (selMeasure) {
                 case SELECT_A_MEASURE -> {}
@@ -110,7 +110,7 @@ public class mainWindow extends JFrame {
     }
 
     private void updateComboBoxForCurrencyMeasure(Boolean extendedMeasure){
-        showExtendedMeasuresCheckBox.setEnabled(Measure.CURRENCY.isExtended());
+        showExtendedMeasuresCheckBox.setEnabled(_Measure_.CURRENCY.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
         for (Currency currency : Currency.values()) {
@@ -120,7 +120,7 @@ public class mainWindow extends JFrame {
     }
 
     private void updateComboBoxForLengthMeasure(Boolean extendedMeasure){
-        showExtendedMeasuresCheckBox.setEnabled(Measure.LENGTH.isExtended());
+        showExtendedMeasuresCheckBox.setEnabled(_Measure_.LENGTH.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
         listBottom_ComboBox.removeAllItems();
@@ -135,7 +135,7 @@ public class mainWindow extends JFrame {
     }
 
     private void updateComboBoxForMassMeasure(Boolean extendedMeasure){
-        showExtendedMeasuresCheckBox.setEnabled(Measure.MASS.isExtended());
+        showExtendedMeasuresCheckBox.setEnabled(_Measure_.MASS.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
         listBottom_ComboBox.removeAllItems();
@@ -150,10 +150,10 @@ public class mainWindow extends JFrame {
     }
 
     private void updateComboBoxForTemperatureMeasure(Boolean extendedMeasure){
-        showExtendedMeasuresCheckBox.setEnabled(Measure.TEMPERATURE.isExtended());
+        showExtendedMeasuresCheckBox.setEnabled(_Measure_.TEMPERATURE.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
-        showExtendedMeasuresCheckBox.setEnabled(Measure.TEMPERATURE.isExtended());
+        showExtendedMeasuresCheckBox.setEnabled(_Measure_.TEMPERATURE.isExtended());
         listBottom_ComboBox.removeAllItems();
         listTop_ComboBox.removeAllItems();
 
@@ -168,7 +168,7 @@ public class mainWindow extends JFrame {
     private void updateComboBoxForTimeMeasure(Boolean extendedMeasure){
         nfBottom.setText("");
         nfTop.setText("");
-        showExtendedMeasuresCheckBox.setEnabled(Measure.TIME.isExtended());
+        showExtendedMeasuresCheckBox.setEnabled(_Measure_.TIME.isExtended());
         listBottom_ComboBox.removeAllItems();
         listTop_ComboBox.removeAllItems();
 
@@ -188,13 +188,13 @@ public class mainWindow extends JFrame {
             String selMeasure = Objects.requireNonNull(listMeasures_ComboBox.getSelectedItem()).toString();
             String selMeasTop = Objects.requireNonNull(listTop_ComboBox.getSelectedItem()).toString();
             String selMeasBottom = Objects.requireNonNull(listBottom_ComboBox.getSelectedItem()).toString();
-            Measure selMeasureEnum = Measure.valueOf(selMeasure.toUpperCase());
+            _Measure_ selMeasureEnum = _Measure_.valueOf(selMeasure.toUpperCase());
 
             switch (selMeasureEnum){
                 case MASS -> {
                     double outValue;
                     UnitMass inUnit = Mass.getByLongName(selMeasTop, Mass.values()).getUnit();
-                    UnitMass outUnit = Mass.getByLongName(selMeasTop, Mass.values()).getUnit();
+                    UnitMass outUnit = Mass.getByLongName(selMeasBottom, Mass.values()).getUnit();
                     outValue = inUnit.Convert(entryValue, outUnit);
                     nfBottom.setText(String.valueOf(outValue));
                 }

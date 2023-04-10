@@ -18,6 +18,6 @@ public class UnitMass extends Unit {
     @Override
     public double Convert(double quantity, Unit outUnit) {
         UnitMass unitFinal = (UnitMass) outUnit;
-        return (quantity/factor)*(unitFinal.getFactor());
+        return (quantity/unitFinal.getFactor())*(factor);
     }
 }

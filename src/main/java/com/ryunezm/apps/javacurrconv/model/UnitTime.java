@@ -14,13 +14,9 @@ public class UnitTime extends Unit {
         return factor;
     }
 
-    public boolean isCommonness() {
-        return commonness;
-    }
-
     @Override
     public double Convert(double quantity, Unit outUnit) {
         UnitTime unitFinal = (UnitTime) outUnit;
-        return (quantity/factor)*(unitFinal.getFactor());
+        return (quantity/unitFinal.getFactor())*(factor);
     }
 }
