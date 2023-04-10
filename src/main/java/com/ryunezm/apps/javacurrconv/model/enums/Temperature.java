@@ -2,6 +2,8 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitTemperature;
 
+import java.util.Arrays;
+
 public enum Temperature implements EnumFunctions {
     celsius("Celsius", "°C", true),
     kelvin("Kelvin", "K", true),
@@ -38,4 +40,11 @@ public enum Temperature implements EnumFunctions {
 
     @Override
     public String getLongName() { return name + " (" + symbol+ ")" ; }
+
+    public static Temperature getByLongName(String longName, Temperature[] units){
+        return Arrays.stream(units)
+                .filter(temperature -> temperature.getLongName().equals(longName))
+                .findFirst().
+                orElse(null);
+    }
 }

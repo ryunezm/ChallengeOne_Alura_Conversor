@@ -2,6 +2,8 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitMass;
 
+import java.util.Arrays;
+
 public enum Mass implements EnumFunctions {
 
     gram("Grams", "g", 1, true),
@@ -76,4 +78,11 @@ public enum Mass implements EnumFunctions {
 
     @Override
     public String getLongName() { return name + " (" + symbol+ ")" ; }
+
+    public static Mass getByLongName(String longName, Mass[] units){
+        return Arrays.stream(units)
+                .filter(mass -> mass.getLongName().equals(longName))
+                .findFirst().
+                orElse(null);
+    }
 }

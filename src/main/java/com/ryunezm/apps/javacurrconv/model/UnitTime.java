@@ -20,6 +20,7 @@ public class UnitTime extends Unit {
 
     @Override
     public double Convert(double quantity, Unit outUnit) {
-        return 0;
+        UnitTime unitFinal = (UnitTime) outUnit;
+        return (quantity/factor)*(unitFinal.getFactor());
     }
 }

@@ -1,6 +1,7 @@
 package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitCurrency;
+import java.util.Arrays;
 
 public enum Currency implements EnumFunctions {
     USD("USD", "U.S. dollar", "US$",1 ),
@@ -42,10 +43,10 @@ public enum Currency implements EnumFunctions {
     ZAR("ZAR", "South African rand", "R", 18.56);
 
 
-    private String code;
-    private String name;
-    private String symbol;
-    private double factor;
+    private final String code;
+    private final String name;
+    private final String symbol;
+    private final double factor;
 
     Currency(String code, String name, String symbol, double factor) {
         this.code = code;
@@ -76,4 +77,11 @@ public enum Currency implements EnumFunctions {
 
     @Override
     public String getLongName() { return name + " (" + symbol+ ")" ; }
+
+    public static Currency getByLongName(String longName, Currency[] units){
+        return Arrays.stream(units)
+                .filter(currency -> currency.getLongName().equals(longName))
+                .findFirst().
+                orElse(null);
+    }
 }

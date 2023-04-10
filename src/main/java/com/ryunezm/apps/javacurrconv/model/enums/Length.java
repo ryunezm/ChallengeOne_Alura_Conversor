@@ -2,6 +2,8 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitLength;
 
+import java.util.Arrays;
+
 public enum Length implements EnumFunctions {
 
     meter("Meters", "m", 1, true),
@@ -81,4 +83,11 @@ public enum Length implements EnumFunctions {
 
     @Override
     public String getLongName() { return name + " (" + symbol+ ")" ; }
+
+    public static Length getByLongName(String longName, Length[] units){
+        return Arrays.stream(units)
+                .filter(length -> length.getLongName().equals(longName))
+                .findFirst().
+                orElse(null);
+    }
 }

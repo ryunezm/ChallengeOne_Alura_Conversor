@@ -2,6 +2,8 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 import com.ryunezm.apps.javacurrconv.model.UnitTime;
 
+import java.util.Arrays;
+
 public enum Time implements EnumFunctions {
     seconds("Seconds", "s", 1, true),
     quettaseconds("Quettaseconds", "Qs", 1e30, false),
@@ -60,4 +62,11 @@ public enum Time implements EnumFunctions {
 
     @Override
     public String getLongName() { return name + " (" + symbol+ ")" ; }
+
+    public static Time getByLongName(String longName, Time[] units){
+        return Arrays.stream(units)
+                .filter(time -> time.getLongName().equals(longName))
+                .findFirst().
+                orElse(null);
+    }
 }

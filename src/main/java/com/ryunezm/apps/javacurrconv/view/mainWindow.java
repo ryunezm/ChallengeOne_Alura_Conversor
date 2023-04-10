@@ -180,7 +180,7 @@ public class mainWindow extends JFrame {
         }
     }
 
-    private void calculateConversion(){
+    private void calculateConversion_old(){
         System.out.println("Hi there, I'm converting");
         try{
             double entryValue = Double.parseDouble(nfTop.getText());
@@ -282,6 +282,63 @@ public class mainWindow extends JFrame {
 
     }
 
+    private void calculateConversion(){
+        System.out.println("Hi there, I'm converting");
+        try{
+            double entryValue = Double.parseDouble(nfTop.getText());
+
+            String selMeasure = Objects.requireNonNull(listMeasures_ComboBox.getSelectedItem()).toString();
+            String selMeasTop = Objects.requireNonNull(listTop_ComboBox.getSelectedItem()).toString();
+            String selMeasBottom = Objects.requireNonNull(listBottom_ComboBox.getSelectedItem()).toString();
+            Measure selMeasureEnum = Measure.valueOf(selMeasure.toUpperCase());
+
+            switch (selMeasureEnum){
+                case MASS -> {
+                    double outValue;
+                    UnitMass inUnit = Mass.getByLongName(selMeasTop, Mass.values()).getUnit();
+                    UnitMass outUnit = Mass.getByLongName(selMeasTop, Mass.values()).getUnit();
+                    outValue = inUnit.Convert(entryValue, outUnit);
+                    nfBottom.setText(String.valueOf(outValue));
+                }
+                case TIME -> {
+                    double outValue;
+                    UnitTime inUnit = Time.getByLongName(selMeasTop, Time.values()).getUnit();
+                    UnitTime outUnit = Time.getByLongName(selMeasBottom, Time.values()).getUnit();
+                    outValue = inUnit.Convert(entryValue, outUnit);
+                    nfBottom.setText(String.valueOf(outValue));
+                }
+                case LENGTH -> {
+                    double outValue;
+                    UnitLength inUnit = Length.getByLongName(selMeasTop, Length.values()).getUnit();
+                    UnitLength outUnit = Length.getByLongName(selMeasBottom, Length.values()).getUnit();
+                    outValue = inUnit.Convert(entryValue, outUnit);
+                    nfBottom.setText(String.valueOf(outValue));
+                }
+                case CURRENCY -> {
+                    double outValue;
+                    UnitCurrency inUnit = Currency.getByLongName(selMeasTop, Currency.values()).getUnit();
+                    UnitCurrency outUnit = Currency.getByLongName(selMeasBottom, Currency.values()).getUnit();
+                    outValue = inUnit.Convert(entryValue, outUnit);
+                    nfBottom.setText(String.valueOf(outValue));
+                }
+                case TEMPERATURE -> {
+                    double outValue;
+                    UnitTemperature inUnit = Temperature.getByLongName(selMeasTop, Temperature.values()).getUnit();
+                    UnitTemperature outUnit = Temperature.getByLongName(selMeasBottom, Temperature.values()).getUnit();
+                    outValue = inUnit.Convert(entryValue, outUnit);
+                    nfBottom.setText(String.valueOf(outValue));
+                }
+                case SELECT_A_MEASURE -> System.out.println(" * fuck this * ");
+                default -> {}
+            }
+
+        } catch (NumberFormatException ex){
+            System.out.println("Invalid number!!!");
+            JOptionPane.showMessageDialog(null, "Invalid number!!!");
+            nfBottom.setText("");
+        }
+
+    }
     //Main method
     public static void main(String[] args) {
         FlatLightLaf.setup();

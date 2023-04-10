@@ -18,4 +18,6 @@ public class UnitCurrency extends Unit {
         UnitCurrency unitFinal = (UnitCurrency) outUnit;
         return (quantity/factor)*(unitFinal.getFactor());
     }
+
+
 }
