@@ -1,12 +1,15 @@
 package com.ryunezm.apps.javacurrconv.model;
 
 public abstract class Unit {
-    private String name;
-    private String symbol;
+    private final String name;
+    private final String symbol;
 
-    public Unit(String name, String symbol) {
+    protected double factor;
+
+    public Unit(String name, String symbol, double factor) {
         this.name = name;
         this.symbol = symbol;
+        this.factor = factor;
     }
 
     public String getName() {
@@ -17,6 +20,9 @@ public abstract class Unit {
         return symbol;
     }
 
+    public double getFactor() {
+        return factor;
+    }
     public abstract double Convert(double quantity, Unit outUnit);
 
 }

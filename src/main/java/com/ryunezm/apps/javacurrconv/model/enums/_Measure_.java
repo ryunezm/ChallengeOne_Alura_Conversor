@@ -2,7 +2,7 @@ package com.ryunezm.apps.javacurrconv.model.enums;
 
 public enum _Measure_ {
     SELECT_A_MEASURE("Select a measure", false),
-    CURRENCY("Currency", false),
+    CURRENCY("Currency", true),
     LENGTH("Length", true),
     MASS("Mass", true),
     TEMPERATURE("Temperature", true),

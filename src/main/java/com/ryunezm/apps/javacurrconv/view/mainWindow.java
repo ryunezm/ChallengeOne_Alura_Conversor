@@ -5,7 +5,6 @@ import com.ryunezm.apps.javacurrconv.model.*;
 import com.ryunezm.apps.javacurrconv.model.enums.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.Objects;
 
 public class mainWindow extends JFrame {
@@ -52,13 +51,6 @@ public class mainWindow extends JFrame {
         nfBottom.setEnabled(false);
         nfTop.setEnabled(false);
         converterButton.setEnabled(false);
-
-        listMeasures_ComboBox.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                System.out.println("Focus gained");
-            }
-        });
 
         for (_Measure_ measure : _Measure_.values()) {
             listMeasures_ComboBox.addItem(measure.getName());
@@ -112,6 +104,9 @@ public class mainWindow extends JFrame {
         showExtendedMeasuresCheckBox.setEnabled(_Measure_.CURRENCY.isExtended());
         nfBottom.setText("");
         nfTop.setText("");
+        listBottom_ComboBox.removeAllItems();
+        listTop_ComboBox.removeAllItems();
+
         for (Currency currency : Currency.values()) {
             if(extendedMeasure || currency.isCommonness()){
                 listTop_ComboBox.addItem(currency.getLongName());
@@ -182,7 +177,6 @@ public class mainWindow extends JFrame {
     }
 
     private void calculateConversion(){
-        System.out.println("Hi there, I'm converting");
         try{
             double entryValue = Double.parseDouble(nfTop.getText());
 
@@ -227,7 +221,7 @@ public class mainWindow extends JFrame {
                     outValue = inUnit.Convert(entryValue, outUnit);
                     nfBottom.setText(String.valueOf(outValue));
                 }
-                case SELECT_A_MEASURE -> System.out.println(" * fuck this * ");
+                case SELECT_A_MEASURE -> System.out.println(" * nothing here * ");
                 default -> {}
             }
 
