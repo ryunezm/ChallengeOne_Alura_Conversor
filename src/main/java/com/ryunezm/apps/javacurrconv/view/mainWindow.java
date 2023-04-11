@@ -4,6 +4,7 @@ import com.formdev.flatlaf.*;
 import com.ryunezm.apps.javacurrconv.model.*;
 import com.ryunezm.apps.javacurrconv.model.enums.*;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.util.Objects;
 
@@ -30,7 +31,11 @@ public class mainWindow extends JFrame {
         setContentPane(mainPanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-        converter_Label.setBorder(null);
+        converter_Label.setText("   CONVERTER   ");
+        converter_Label.setBorder(BorderFactory.createBevelBorder(
+                BevelBorder.RAISED,
+                Color.LIGHT_GRAY,
+                Color.LIGHT_GRAY));
         initiateComboBox();
         updateComboBox();
 
