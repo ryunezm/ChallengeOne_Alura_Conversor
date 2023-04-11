@@ -240,6 +240,6 @@ public class mainWindow extends JFrame {
     //Main method
     public static void main(String[] args) {
         FlatLightLaf.setup();
-        var mw = new mainWindow();
+        new mainWindow();
     }
 }
